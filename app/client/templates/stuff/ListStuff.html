@@ -6,8 +6,9 @@
         <thead>
         <tr>
           <th>Name</th>
-          <th>Quantity</th>
-          <th>Edit</th>
+          <th>ISBN</th>
+          <th>OfferType</th>
+          <th>Offer</th>
         </tr>
         </thead>
 
@@ -15,7 +16,9 @@
         {{#each stuffList}}
           <tr>
             <td>{{name}}</td>
-            <td>{{quantity}}</td>
+            <td>{{ISBN}}</td>
+            <td>{{OfferType}}</td>
+            <td>{{Offer}}</td>
             <td><a href="{{pathFor 'EditStuff'}}">Edit</a></td>
           </tr>
         {{/each}}

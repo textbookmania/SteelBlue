@@ -44,16 +44,34 @@ Stuff.attachSchema(new SimpleSchema({
     max: 20,
     autoform: {
       group: stuff,
-      placeholder: "Bicycle"
+      placeholder: "Textbook Name"
     }
   },
-  quantity: {
-    label: "Quantity",
+  ISBN: {
+    label: "ISBN",
+    type: String,
+    optional: false,
+    autoform: {
+      group: stuff,
+      placeholder: "ISBN"
+    }
+  },
+  OfferType: {
+    label: "OfferType",
+    type: String,
+    optional: false,
+    autoform: {
+      group: stuff,
+      placeholder: "Buy or Sell"
+    }
+  },
+  Offer: {
+    label: "Offer",
     type: Number,
     optional: false,
     autoform: {
       group: stuff,
-      placeholder: "3"
+      placeholder: "0"
     }
   }
 }));
