@@ -1,4 +1,4 @@
-<template name="ListTextbook">
+<template name="ListStuff">
   {{#IfLoggedIn}}
     <div class="well">
 
@@ -14,13 +14,13 @@
         </thead>
 
         <tbody>
-        {{#each textbookList}}
+        {{#each stuffList}}
           <tr>
             <td>{{name}}</td>
             <td>{{ISBN}}</td>
             <td>{{OfferType}}</td>
             <td>{{Offer}}</td>
-            <td><a href="{{pathFor 'EditTextbook'}}">Edit</a></td>
+            <td><a href="{{pathFor 'EditStuff'}}">Edit</a></td>
           </tr>
         {{/each}}
         </tbody>
