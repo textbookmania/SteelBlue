@@ -1,3 +1,8 @@
 body {
   padding-top: 70px;  /* Move body of page below navbar. */
 }
+
+.navbar-inverse {
+  background-color: steelblue;
+  border-color: lightsteelblue;
+}

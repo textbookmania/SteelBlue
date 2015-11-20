@@ -1,49 +1,49 @@
-stuff = "Stuff";  // avoid typos, this string occurs many times.
+textbook = "Textbook";  // avoid typos, this string occurs many times.
 
-Stuff = new Mongo.Collection(stuff);
+Textbook = new Mongo.Collection(textbook);
 
 Meteor.methods({
   /**
-   * Invoked by AutoForm to add a new Stuff record.
-   * @param doc The Stuff document.
+   * Invoked by AutoForm to add a new Textbook record.
+   * @param doc The Textbook document.
    */
-  addStuff: function(doc) {
-    check(doc, Stuff.simpleSchema());
-    Stuff.insert(doc);
+  addTextbook: function(doc) {
+    check(doc, Textbook.simpleSchema());
+    Textbook.insert(doc);
   },
   /**
    *
-   * Invoked by AutoForm to update a Stuff record.
-   * @param doc The Stuff document.
+   * Invoked by AutoForm to update a Textbook record.
+   * @param doc The Textbook document.
    * @param docID It's ID.
    */
-  editStuff: function(doc, docID) {
-    check(doc, Stuff.simpleSchema());
-    Stuff.update({_id: docID}, doc);
+  editTextbook: function(doc, docID) {
+    check(doc, Textbook.simpleSchema());
+    Textbook.update({_id: docID}, doc);
   }
 });
 
 // Publish the entire Collection.  Subscription performed in the router.
 if (Meteor.isServer) {
-  Meteor.publish(stuff, function () {
-    return Stuff.find();
+  Meteor.publish(textbook, function () {
+    return Textbook.find();
   });
 }
 
 
 /**
- * Create the schema for Stuff
+ * Create the schema for Textbook
  * See: https://github.com/aldeed/meteor-autoform#common-questions
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */
-Stuff.attachSchema(new SimpleSchema({
+Textbook.attachSchema(new SimpleSchema({
   name: {
     label: "Name",
     type: String,
     optional: false,
     max: 20,
     autoform: {
-      group: stuff,
+      group: textbook,
       placeholder: "Textbook Name"
     }
   },
@@ -52,7 +52,7 @@ Stuff.attachSchema(new SimpleSchema({
     type: String,
     optional: false,
     autoform: {
-      group: stuff,
+      group: textbook,
       placeholder: "ISBN"
     }
   },
@@ -61,7 +61,7 @@ Stuff.attachSchema(new SimpleSchema({
     type: String,
     optional: false,
     autoform: {
-      group: stuff,
+      group: textbook,
       placeholder: "Buy or Sell"
     }
   },
@@ -70,7 +70,7 @@ Stuff.attachSchema(new SimpleSchema({
     type: Number,
     optional: false,
     autoform: {
-      group: stuff,
+      group: textbook,
       placeholder: "0"
     }
   }
