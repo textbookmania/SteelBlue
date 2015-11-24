@@ -16,8 +16,10 @@
 
         <ul class="nav navbar-nav navbar-right">
           {{#if currentUser}}
+            <li><a href="{{ pathFor 'TextbookTable' }}">Textbook Table</a></li>
             <li><a href="{{ pathFor 'AddStuff' }}">Add Offer</a></li>
-            <li><a href="{{ pathFor 'ListStuff' }}">List Offers</a></li>
+            <li><a href="{{ pathFor 'ListStuff' }}">Buy Offers</a></li>
+            <li><a href="{{ pathFor 'ListStuff2' }}">Sell Offers</a></li>
           {{/if}}
           {{> CasLogin }}
         </ul>
