@@ -1,3 +1,37 @@
 body {
   padding-top: 70px;  /* Move body of page below navbar. */
+  font-size: 2.25em;
+  text-align: center;
+}
+
+#banner {
+  background-image: url("images/books.jpg");
+}
+
+.well {
+  background-color: steelblue;
+  box-shadow: inset 0px 0px 10px 0px #FFFFFF;
+}
+
+a {
+  color: mintcream;
+}
+
+a:hover {
+  color: mintcream;
+}
+
+i {
+  color: steelblue;
+  font-size: 4.5em;
+}
+
+.navbar-inverse {
+  background-color: steelblue;
+  border-color: steelblue;
+  color: mintcream;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+  color: mintcream;
 }

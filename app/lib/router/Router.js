@@ -14,6 +14,10 @@ Router.route('/', {
   name: 'Home'
 });
 
+Router.route('/profile', {
+  name: 'ProfilePage'
+});
+
 Router.route('/list', {
   name: 'ListStuff'
 });
