@@ -1,9 +1,18 @@
 <template name="ProfilePage">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8">
-        {{ currentUser.profile.firstName }} {{ currentUser.profile.lastName }}
+      <div class="col-sm-3 col-sm-offset-1 well">
+        <img src="{{ currentUser.profile.picture }}" class="img-rounded center-block" height="100" width="100"><br>
+        <a href="EditProfile.html">Change Picture</a>
+      </div>
+      <div class="col-sm-7 well">
+        <h2 class="fullName well-sm">
+          {{fullName(currentUser.profile.name)}}
+        </h2>
+        <h2>Email: {{ currentUser.profile.name }}@hawaii.edu</h2>
+        <h3>This user has opted out of </h3>
       </div>
     </div>
   </div>
+
 </template>
