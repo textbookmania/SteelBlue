@@ -1,3 +1,74 @@
 body {
-  padding-top: 70px;  /* Move body of page below navbar. */
+  /*padding-top: 270px;   Move body of page below navbar. */
+  font-size: 20px;
+  text-align: center;
+  color: steelblue;
+  font-family: 'Oxygen', sans-serif;
+}
+
+#banner {
+  background-image: url('/images/books.jpg');
+  height: 200px;
+  background-size: cover;
+  background-position: 30px -200px;
+}
+
+legend {
+  color: mintcream;
+}
+
+.btn-primary:hover {
+  background-color: lightsteelblue;
+}
+
+.btn-primary {
+  background-color: darkorange;
+}
+
+.well, .well-sm, .well-lg {
+  background-color: steelblue;
+  box-shadow: inset 0px 0px 10px 0px #FFFFFF;
+  color: mintcream;
+  border-radius: 20px;
+}
+
+.well-sm {
+  border-radius: 200px;
+  background-color: cadetblue;
+}
+
+i {
+  color: steelblue;
+  font-size: 4.5em;
+}
+
+.row > .col-sm-3 .col-sm-offset-1 .well > a {
+  font-size: 36px;
+}
+
+.navbar-nav > li > a, .navbar-brand {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-brand {
+  padding-top: 25px;
+  font-family: 'Mountains of Christmas', cursive;
+}
+
+.navbar-inverse {
+  background-color: steelblue;
+  border-color: steelblue;
+}
+
+.navbar-brand {
+  font-size: 45px;
+}
+
+.navbar-fixed-top {
+  position: relative;
+}
+
+a, a:hover, .navbar-inverse, .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a, .fullName {
+  color: mintcream;
 }
