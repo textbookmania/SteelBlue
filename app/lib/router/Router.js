@@ -14,12 +14,28 @@ Router.route('/', {
   name: 'Home'
 });
 
+Router.route('/profile', {
+  name: 'ProfilePage'
+});
+
+Router.route('/editProfile', {
+  name: 'EditProfile'
+});
+
 Router.route('/list', {
   name: 'ListStuff'
 });
 
+Router.route('/list2', {
+  name: 'ListStuff2'
+});
+
 Router.route('/add', {
   name: 'AddStuff'
+});
+
+Router.route('/table', {
+  name: 'TextbookTable'
 });
 
 

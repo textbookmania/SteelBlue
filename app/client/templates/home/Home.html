@@ -1,9 +1,31 @@
 <template name="Home">
 
   {{#if currentUser}}
-    The current user is: {{ currentUser.profile.name }}
+  <div class="row">
+    <div class="col-sm-3 col-sm-offset-1">
+      <i class="fa fa-plus"></i>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1">
+      <i class="fa fa-usd"></i>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1">
+      <i class="fa fa-random"></i>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 col-sm-offset-1 well">
+      <a href="{{pathFor 'AddStuff'}}">Add Offer</a>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1 well">
+      <a href="{{pathFor 'ListStuff'}}">Sell Offer</a>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1 well">
+      <a href="{{pathFor 'Matching'}}">Match Offers</a>
+    </div>
+  </div>
   {{else}}
-    No one is logged in.
+  <p><h1 style="font-size: 2em;"><strong>Welcome to Textbook Mania v.SteelBlue!</strong></h1></p>
+  <p style="font-size: 25px; font-family: 'Oxygen', sans-serif;">Here, ICS students can contact each other looking for books for their classes! In order to use this service, please login.</p>
   {{/if}}
 
 </template>

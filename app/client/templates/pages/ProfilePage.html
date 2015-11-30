@@ -1,0 +1,21 @@
+<template name="ProfilePage">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 col-sm-offset-1 well">
+        <img src="{{ currentUser.profile.picture }}" class="img-rounded center-block" height="100" width="100"><br>
+        <a href="{{pathFor 'EditProfile'}}">Change Picture</a>
+      </div>
+      <div class="col-sm-7 well">
+        <h2 class="fullName well-sm">
+          {{fullName(currentUser.profile.name)}}
+        </h2>
+        {{#if contactMe (currentUser.profile.contact)}}
+        <h2>Email: {{ currentUser.profile.name }}@hawaii.edu</h2>
+        {{else}}
+        <h3>This user does not wish to be contacted.</h3>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+</template>
