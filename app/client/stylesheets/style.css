@@ -13,6 +13,18 @@ body {
   background-position: 30px -200px;
 }
 
+legend {
+  color: mintcream;
+}
+
+.btn-primary:hover {
+  background-color: lightsteelblue;
+}
+
+.btn-primary {
+  background-color: darkorange;
+}
+
 .well, .well-sm, .well-lg {
   background-color: steelblue;
   box-shadow: inset 0px 0px 10px 0px #FFFFFF;

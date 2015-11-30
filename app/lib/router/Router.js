@@ -18,6 +18,10 @@ Router.route('/profile', {
   name: 'ProfilePage'
 });
 
+Router.route('/editProfile', {
+  name: 'EditProfile'
+});
+
 Router.route('/list', {
   name: 'ListStuff'
 });

@@ -28,3 +28,5 @@ ejson
 check
 atoy40:accounts-cas
 random
+cfs:standard-packages
+cfs:gridfs
