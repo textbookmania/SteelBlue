@@ -11,9 +11,11 @@ Template.ProfilePage.helpers({
     };
   },
   contactMe: function(name) {
-    if (name.contact === "yes") {
-      return true;
+    if (name.contact != "checked") {
+      document.getElementById("contact").innerHTML = "This user does not wish to be contacted";
     }
-    else return false;
+    else {
+      document.getElementById("contact").innerHTML = "Email: " + name.name + "@hawaii.edu";
+    };
   }
 });
