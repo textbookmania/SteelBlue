@@ -3,8 +3,8 @@
  * @type {*[]}
  */
 var stuffSeeds = [
-  {name: "Textbook", ISBN: "23124124", OfferType: "Buy", Offer: 5}
-
+  {name: "Textbook", ISBN: "23124124", OfferType: "Buy", Offer: 5},
+  {name: "Other textbook", ISBN:"1823918", OfferType: "Sell", Offer: 1}
 ];
 
 /**
