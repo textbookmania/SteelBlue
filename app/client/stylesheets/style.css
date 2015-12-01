@@ -10,7 +10,7 @@ body {
   background-image: url('/images/books.jpg');
   height: 200px;
   background-size: cover;
-  background-position: 30px -200px;
+  background-position: 0px -200px;
 }
 
 legend {
