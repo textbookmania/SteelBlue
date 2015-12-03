@@ -2,7 +2,7 @@
  * A list of Stuff to pre-fill the Collection.
  * @type {*[]}
  */
-var stuffSeeds = [
+var textbookSeeds = [
   {name: "Textbook", ISBN: "23124124", OfferType: "Buy", Offer: 5}
 
 ];
@@ -10,8 +10,8 @@ var stuffSeeds = [
 /**
  * Initialize the Stuff collection if empty with seed data.
  */
-if (Stuff.find().count() === 0) {
-  _.each(stuffSeeds,  function(stuff) {
-    Stuff.insert(stuff);
+if (Textbook.find().count() === 0) {
+  _.each(textbookSeeds,  function(textbook) {
+    Textbook.insert(textbook);
   });
 }
