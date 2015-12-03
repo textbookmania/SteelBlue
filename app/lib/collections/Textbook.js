@@ -40,25 +40,28 @@ Textbook.attachSchema(new SimpleSchema({
   name: {
     label: "Name",
     type: String,
+    allowedValues:["A", "B", "C"],
     optional: false,
     max: 20,
     autoform: {
       group: textbook,
-      placeholder: "Textbook Name"
+      firstOption: "Textbook Name"
     }
   },
   ISBN: {
     label: "ISBN",
     type: String,
+    allowedValues: ["123", "456", "789"],
     optional: false,
     autoform: {
       group: textbook,
-      placeholder: "ISBN"
+      firstOption: "ISBN"
     }
   },
   OfferType: {
     label: "OfferType",
     type: String,
+    allowedValues: ["Buy", "Sell"],
     optional: false,
     autoform: {
       group: textbook,
