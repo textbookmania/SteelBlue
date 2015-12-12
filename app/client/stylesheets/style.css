@@ -170,3 +170,7 @@ body {
 .post-text {
   margin-left: 210px
 }
+
+.button-right{
+  float: right
+}

@@ -58,7 +58,7 @@ Textbooks.insert({
   title: "Digital Logic Design: a Rigorous Approach",
   course: "332",
     isbn: "9781107027534",
-  img: "9781107027534"
+    img: "http://ecx.images-amazon.com/images/I/51jNyCheK9L._SX344_BO1,204,203,200_.jpg"
 });
 
 Textbooks.insert({

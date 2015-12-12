@@ -24,3 +24,9 @@ Template.postSubmit.events({
     });
   }
 });
+
+Template.postSubmit.helpers({
+  selectedTextbook: function() {
+    return Textbooks.findOne({_id: Session.get('selectedItem')});
+  }
+});
