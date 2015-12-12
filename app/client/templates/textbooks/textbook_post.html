@@ -1,11 +1,16 @@
 <template name="textbookPost">
   <div class="post">
     <div class="post-content">
-      <h3><a href="">{{title}}</a></h3>
-      <ul class="list-inline">
-        <li><h7>ISBN: {{isbn}}</h7></li>
-        <li><h7>Course: {{course}}</h7></li>
-      </ul>
+      <div class="post-image">
+        <img src = "{{img}}" height="150px" align="left">
+      </div>
+      <div class="post-text">
+        <h3><a href="">{{title}}</a></h3>
+        <ul class="list-inline">
+          <li><h7>ISBN: {{isbn}}</h7></li>
+          <li><h7>Course: {{course}}</h7></li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
