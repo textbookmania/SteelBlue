@@ -3,7 +3,7 @@ Router.configure({
   loadingTemplate: 'loading',
   notFoundTemplate: 'notFound',
   waitOn: function() {
-    return [Meteor.subscribe('posts'), Meteor.subscribe('notifications')]
+    return [Meteor.subscribe('posts'), Meteor.subscribe('notifications'), Meteor.subscribe('textbooks')]
   }
 });
 
@@ -25,6 +25,7 @@ Router.route('/posts/:_id/edit', {
 Router.route('/submit', {name: 'postSubmit'});
 Router.route('/buy', {name: 'buyOffers'});
 Router.route('/sell', {name: 'sellOffers'});
+Router.route('/textbooks', {name: 'textbookList'});
 
 var requireLogin = function() {
   if (! Meteor.user()) {
