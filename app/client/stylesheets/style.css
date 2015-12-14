@@ -158,3 +158,19 @@ body {
   margin-bottom: 5px;
   pointer-events: auto;
 }
+
+.post-image {
+  float: left
+}
+
+.post-image img {
+  display: block
+}
+
+.post-text {
+  margin-left: 210px
+}
+
+.button-right{
+  float: right
+}

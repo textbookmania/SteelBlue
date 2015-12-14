@@ -21,7 +21,7 @@ Meteor.methods({
     check(postAttributes, {
       title: String,
       isbn: String,
-      condition: String,
+      condition: {type: String, allowedValues: ["Excellent", "Good", "Fair", "Poor"]},
       offertype: String,
       price: String,
       desc: String

@@ -1,5 +1,5 @@
 Template.textbookList.helpers({
   textbooks: function () {
-    return Textbooks.find();
+    return Textbooks.find({}, {sort: { course: 1   }});
   }
 });
