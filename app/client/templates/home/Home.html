@@ -1,9 +1,11 @@
 <template name="Home">
 
   {{#if currentUser}}
-    The current user is: {{ currentUser.profile.name }}
+    Welcome back, {{ currentUser.profile.firstName }}! Here is a list of your current offers:<br>
+
+  {{> ListOffer}}
   {{else}}
-    No one is logged in.
+    <p>Welcome to Steel Blue's Textbook Exchange! Please log-in to use our services. Do note that you need to have a valid UH Username in order to log-in!</p>
   {{/if}}
 
 </template>

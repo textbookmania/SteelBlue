@@ -8,6 +8,7 @@ Meteor.methods({
    * @param doc The Offer document.
    */
   addOffer: function(doc) {
+    doc.owner = Meteor.user().profile.name;
     check(doc, Offer.simpleSchema());
     Offer.insert(doc);
   },
@@ -40,6 +41,7 @@ Offer.attachSchema(new SimpleSchema({
   name: {
     label: "Name",
     type: String,
+    allowedValues: [],
     optional: false,
     max: 100,
     autoform: {
@@ -60,7 +62,7 @@ Offer.attachSchema(new SimpleSchema({
     label: "Condition",
     type: String,
     optional: false,
-    max: 20,
+    allowedValues: ['Excellent', 'Good', 'Fair', 'Poor', 'Any'],
     autoform: {
       group: offer,
       placeholder: "Insert condition here"
@@ -78,12 +80,17 @@ Offer.attachSchema(new SimpleSchema({
   },
   expiration: {
     label: "Expiration Date",
-    type: String,
+    type: Date,
     optional: false,
-    max: 20,
     autoform: {
       group: offer,
-      placeholder: "Enter when you would like the offer to end here"
+      afFieldInput: {
+        type: "bootstrap-datetimepicker"
+      }
     }
+  },
+  owner: {
+    type: String,
+    optional: true
   }
 }));

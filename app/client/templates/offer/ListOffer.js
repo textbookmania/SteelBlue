@@ -8,10 +8,10 @@ Template.ListOffer.helpers({
   },
 
   buyOffers: function() {
-    return Offer.find({offerType: "Buy"});
+    return Offer.find({owner: Meteor.userId(), offerType: "Buy"});
   },
 
   sellOffers: function() {
-    return Offer.find({offerType: "Sell"});
+    return Offer.find({owner: Meteor.userId(), offerType: "Sell"});
   }
 });
