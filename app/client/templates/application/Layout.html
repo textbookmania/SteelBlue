@@ -1,7 +1,8 @@
-<template name="Layout">
-  {{> Header}}
+<template name="layout">
   <div class="container">
-    {{> yield}}
+    {{> header}}
+    <div id="main">
+      {{> yield}}
+    </div>
   </div>
-  {{> Footer}}
 </template>
