@@ -1,0 +1,34 @@
+<template name="MatchOffer">
+  {{#IfLoggedIn}}
+    <div class="row">
+      {{#each myOffers}}
+        {{#each matchBuyOffers}}
+          {{#if displayBuyOffers}}
+         <div class="col-sm-3 well">
+           <img src="{{showCover}}" width="70%" height="70%"><br>
+           <h4>Name:</h4> <strong>{{name}}</strong><br>
+           <h4>Price:</h4> <strong>{{price}}</strong><br>
+           <h4>Condition:</h4> <strong>{{condition}}</strong><br>
+           <h4>Expiration:</h4> <strong>{{expiration}}</strong><br>
+           <h4>Seller:</h4> <strong>{{owner}}</strong>
+           <h4><button type="button" class="contact">Contact This Seller!</button></h4>
+         </div>
+          {{/if}}
+        {{/each}}
+        {{#each matchSellOffers}}
+          {{#if displaySellOffers}}
+         <div class="col-sm-3 well">
+           <img src="{{showCover}}" width="70%" height="70%"><br>
+           <h4>Name:</h4> <strong>{{name}}</strong><br>
+           <h4>Price:</h4> <strong>{{price}}</strong><br>
+           <h4>Condition:</h4> <strong>{{condition}}</strong><br>
+           <h4>Expiration:</h4> <strong>{{expiration}}</strong><br>
+           <h4>Buyer:</h4> <strong>{{owner}}</strong>
+           <h4><button type="button" class="contact">Contact This Seller!</button></h4>
+         </div>
+          {{/if}}
+        {{/each}}
+      {{/each}}
+    </div>
+  {{/IfLoggedIn}}
+</template>

@@ -1,0 +1,20 @@
+<template name="ProfilePage">
+  {{#IfLoggedIn}}
+  <div class="container">
+    <div class="col-sm-6 well">Profile Picture *Still under construction*</div>
+    <div class="col-sm-4 text-left well">
+
+      <p><h4 class="text-left">First Name : </h4>{{currentUser.profile.firstName}}</p>
+      <p><h4 class="text-left">Last Name : </h4>{{currentUser.profile.lastName}}</p>
+      <p><h4 class="text-left">Contact By Email : </h4>
+      {{#if contact}}
+      <p><h4 class="text-left">Email : </h4>{{currentUser.profile.email}}</p>
+      {{else}}
+        This user does not wish to be contacted through e-mail.
+      {{/if}}</p>
+
+      <a href="{{ pathFor 'EditProfile' }}" class="well-sm">Edit Profile</a>
+    </div>
+  </div>
+  {{/IfLoggedIn}}
+</template>

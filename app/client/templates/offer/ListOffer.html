@@ -1,0 +1,61 @@
+<template name="ListOffer">
+  {{#IfLoggedIn}}
+  <div class="row">
+    <div class="row">
+      <div class="col-xs-8">
+        <h2>My Buy Offers:</h2>
+      </div>
+    </div>
+    {{#each buyOffers}}
+    <div class="col-sm-3 well">
+      <img src="{{showCover}}" width="70%" height="70%"><br>
+      <h4>Name:</h4> <strong>{{name}}</strong><br>
+      <h4>Price:</h4> <strong>{{price}}</strong><br>
+      <h4>Condition:</h4> <strong>{{condition}}</strong><br>
+      <h4>Expiration:</h4> <strong>{{expiration}}</strong> <br>
+      <h4><a href="{{ pathFor 'EditOffer' }}">Edit Offer</a></h4>
+    </div>
+    {{/each}}
+  </div>
+  <div class="row">
+    <div class="row">
+      <div class="col-xs-8">
+        <h2>My Sell Offers:</h2>
+      </div>
+    </div>
+    {{#each sellOffers}}
+    <div class="col-sm-3 well">
+      <img src="{{showCover}}" width="70%" height="70%"><br>
+      <h4>Name:</h4> <strong>{{name}}</strong><br>
+      <h4>Price:</h4> <strong>{{price}}</strong><br>
+      <h4>Condition:</h4> <strong>{{condition}}</strong><br>
+      <h4>Expiration:</h4> <strong>{{expiration}}</strong> <br>
+      <h4><a href="{{ pathFor 'EditOffer' }}">Edit Offer</a></h4>
+    </div>
+    {{/each}}
+  </div>
+    <!--<div class="well">
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Edit</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#each offerList}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{quantity}}</td>
+            <td><a href="{{pathFor 'EditOffer'}}">Edit</a></td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+
+    </div>-->
+  {{/IfLoggedIn}}
+</template>

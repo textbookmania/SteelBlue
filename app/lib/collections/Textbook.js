@@ -1,80 +1,125 @@
-textbook = "Textbook";  // avoid typos, this string occurs many times.
+/**
+ * Created by Michael on 12/14/2015.
+ * Meteor methods code in large thanks to Team MistyRose
+ */
+textbook = "Textbook";
 
 Textbook = new Mongo.Collection(textbook);
 
+if(Meteor.isClient) {
+  Meteor.startup(function() {
+    sAlert.config({
+      effect: 'jelly',
+      position: 'bottom',
+      timeout: 5000,
+      html: false,
+      onRouteClose: true,
+      stack: true,
+      offset: 0,
+      beep: false
+    });
+  });
+};
+
 Meteor.methods({
-  /**
-   * Invoked by AutoForm to add a new Stuff record.
-   * @param doc The Stuff document.
-   */
+
   addTextbook: function(doc) {
+    if (_.findWhere(Textbook.find().fetch(), {title: doc.title})  && _.findWhere(Textbook.find().fetch(), {ISBN13: doc.ISBN13}) ) {
+      if (Meteor.isClient) {
+        sAlert.error("Title and ISBN already exists in the catalog! Please enter a different title and ISBN", configOverwrite);
+      }
+      return;
+    } else if (_.findWhere(Textbook.find().fetch(), {title: doc.title}) ) {
+      if (Meteor.isClient) {
+        sAlert.error("Title already exists in the catalog! Please enter a different title.", configOverwrite);
+      }
+      return;
+    }
+    else if (_.findWhere(Textbook.find().fetch(), {ISBN13: doc.ISBN13})) {
+      if (Meteor.isClient) {
+        sAlert.error("ISBN already exists in the catalog! Please enter a different ISBN.", configOverwrite);
+      }
+      return;
+    }
+
     check(doc, Textbook.simpleSchema());
     Textbook.insert(doc);
   },
   /**
    *
-   * Invoked by AutoForm to update a Stuff record.
-   * @param doc The Stuff document.
+   * Invoked by AutoForm to update a Textbooks record.
+   * @param doc The Textbooks document.
    * @param docID It's ID.
    */
   editTextbook: function(doc, docID) {
     check(doc, Textbook.simpleSchema());
+
     Textbook.update({_id: docID}, doc);
+  },
+  deleteTextbook: function(docID) {
+    Textbook.remove(docID);
   }
 });
 
-// Publish the entire Collection.  Subscription performed in the router.
-if (Meteor.isServer) {
-  Meteor.publish(textbook, function () {
+if(Meteor.isServer) {
+  Meteor.publish(textbook, function() {
     return Textbook.find();
   });
 }
 
-
-/**
- * Create the schema for Stuff
- * See: https://github.com/aldeed/meteor-autoform#common-questions
- * See: https://github.com/aldeed/meteor-autoform#affieldinput
- */
 Textbook.attachSchema(new SimpleSchema({
-  name: {
-    label: "Name",
+  title: {
+    label: "Title",
     type: String,
-    allowedValues:["A", "B", "C"],
     optional: false,
-    max: 20,
+    unique: true,
     autoform: {
       group: textbook,
-      firstOption: "Textbook Name"
+      placeholder: "Name of textbook"
     }
   },
-  ISBN: {
-    label: "ISBN",
+  ISBN10: {
+    label: "ISBN 10",
     type: String,
-    allowedValues: ["123", "456", "789"],
     optional: false,
+    unique: true,
+    max: 50,
     autoform: {
       group: textbook,
-      firstOption: "ISBN"
+      placeholder: "ISBN 10"
     }
   },
-  OfferType: {
-    label: "OfferType",
+
+  ISBN13: {
+    label: "ISBN 13",
     type: String,
-    allowedValues: ["Buy", "Sell"],
     optional: false,
+    unique: true,
+    max: 50,
     autoform: {
       group: textbook,
-      placeholder: "Buy or Sell"
+      placeholder: "ISBN 13"
     }
   },
-  Offer: {
-    label: "Offer",
-    type: Number,
+  author: {
+    label: "Author",
+    type: String,
     optional: false,
+    max: 50,
     autoform: {
       group: textbook,
-      placeholder: "0"
+      placeholder: "Name of author (first and last)"
+    }
+  },
+
+
+  cover: {
+    label: "Cover",
+    type: String,
+    optional: true,
+    autoform: {
+      group: textbook,
+      placeholder: "Cover image"
     }
   }
 }));

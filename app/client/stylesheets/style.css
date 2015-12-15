@@ -1,74 +1,61 @@
 body {
-  /*padding-top: 270px;   Move body of page below navbar. */
-  font-size: 20px;
-  text-align: center;
+  padding-top: 70px;  /* Move body of page below navbar. */
   color: steelblue;
   font-family: 'Oxygen', sans-serif;
+  font-size: 2em;
 }
 
-#banner {
-  background-image: url('/images/books.jpg');
-  height: 200px;
-  background-size: cover;
-  background-position: 0px -200px;
+h2 {
+  margin: 0;
 }
 
-legend {
-  color: mintcream;
-}
-
-.btn-primary:hover {
-  background-color: lightsteelblue;
-}
-
-.btn-primary {
-  background-color: darkorange;
-}
-
-.well, .well-sm, .well-lg {
+.well {
+  text-align: center;
+  font-size: 85%;
   background-color: steelblue;
-  box-shadow: inset 0px 0px 10px 0px #FFFFFF;
   color: mintcream;
-  border-radius: 20px;
 }
 
 .well-sm {
-  border-radius: 200px;
-  background-color: cadetblue;
-}
-
-i {
+  background-color: mintcream;
   color: steelblue;
-  font-size: 4.5em;
+  text-align: center;
+  font-size: 85%;
 }
 
-.row > .col-sm-3 .col-sm-offset-1 .well > a {
-  font-size: 36px;
-}
-
-.navbar-nav > li > a, .navbar-brand {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.navbar-brand {
-  padding-top: 25px;
-  font-family: 'Mountains of Christmas', cursive;
+hr {
+  border-width: 3px 0px 0px;
 }
 
 .navbar-inverse {
   background-color: steelblue;
-  border-color: steelblue;
-}
-
-.navbar-brand {
-  font-size: 45px;
-}
-
-.navbar-fixed-top {
-  position: relative;
-}
-
-a, a:hover, .navbar-inverse, .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a, .fullName {
   color: mintcream;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+  color: mintcream;
+}
+
+.modal-content {
+  background-color: mintcream;
+  color: steelblue;
+  text-align: center;
+}
+
+button, .btn-primary {
+  background-color: mintcream;
+  color: steelblue;
+}
+
+button:hover {
+  border: 2px inset black;
+  border-radius: 5px 5px 5px;
+}
+
+a {
+  color: mintcream;
+}
+
+a:hover {
+  color: lightcoral;
 }

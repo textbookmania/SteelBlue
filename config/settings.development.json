@@ -15,7 +15,16 @@
   "allowed_users": [
     "johnson",
     "cmoore",
+    "mahoe7",
+    "dumlaoj"
+  ],
+  "allowedUsers": [
+    "mahoe7",
     "dumlaoj",
-    "mahoe7"
+    "johnson"
+  ],
+  "adminUsers": [
+    "mahoe7",
+    "johnson"
   ]
 }

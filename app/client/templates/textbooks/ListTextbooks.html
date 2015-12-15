@@ -1,0 +1,15 @@
+<template name="ListTextbooks">
+  {{#IfLoggedIn}}
+    <div class="row">
+      {{#each textbook}}
+        <div class="col-sm-3 well">
+          <img src="{{cover}}" width="70%" height="70%"><br>
+          <h4>Title:</h4> <strong>{{title}}</strong><br>
+          <h4>ISBN10:</h4> <strong>{{ISBN10}}</strong><br>
+          <h4>ISBN13:</h4> <strong>{{ISBN13}}</strong><br>
+          <h4>Author:</h4> <strong>{{author}}</strong> <br>
+        </div>
+      {{/each}}
+    </div>
+  {{/IfLoggedIn}}
+</template>

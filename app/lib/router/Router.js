@@ -6,7 +6,7 @@
 
 Router.configure({
   layoutTemplate: 'Layout',
-  waitOn: function() { return Meteor.subscribe("Textbook"); },
+  waitOn: function() { return Meteor.subscribe("Offer"); },
   loadingTemplate: 'Loading'
 });
 
@@ -14,27 +14,39 @@ Router.route('/', {
   name: 'Home'
 });
 
+Router.route('/list', {
+  name: 'ListOffer'
+});
+
+Router.route('/add', {
+  name: 'AddOffer'
+});
+
+Router.route('/matches', {
+  name: 'MatchOffer'
+});
+
 Router.route('/profile', {
   name: 'ProfilePage'
 });
 
-Router.route('/editProfile', {
+Router.route('/profile/edit', {
   name: 'EditProfile'
 });
 
-Router.route('/list', {
-  name: 'ListTextbook'
+Router.route('/userGuide', {
+  name: 'UserGuide'
 });
 
-
-Router.route('/add', {
-  name: 'AddTextbook'
+Router.route('/manage', {
+  name: 'ManageTextbooks'
 });
 
+Router.route('/textbooks', {
+  name: 'ListTextbooks'
+});
 
-
-
-Router.route('/textbook/:_id', {
-  name: 'EditTextbook',
-  data: function() { return Textbook.findOne(this.params._id); }
+Router.route('/offer/:_id', {
+  name: 'EditOffer',
+  data: function() { return Offer.findOne(this.params._id); }
 });

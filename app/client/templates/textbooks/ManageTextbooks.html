@@ -1,0 +1,46 @@
+<template name="ManageTextbooks">
+  {{#IfLoggedIn}}
+  {{#if isInRole 'admin'}}
+  <div class="well col-sm-4">
+    <h3>Add</h3>
+    {{> quickForm
+    collection="Textbook"
+    template="bootstrap3-horizontal"
+    label-class="col-sm-2"
+    input-col-class="col-sm-10"
+
+    id="ManageTextbooksForm"
+    type="method"
+    meteormethod="addTextbook"
+    resetOnSuccess=true}}
+  </div>
+  <div class="well col-sm-4">
+    <h3>Update</h3>
+    {{> quickForm
+    collection="Textbook"
+    template="bootstrap3-horizontal"
+    label-class="col-sm-2"
+    input-col-class="col-sm-10"
+
+    id="ManageTextbooksForm"
+    type="method"
+    meteormethod="editTextbook"
+    resetOnSuccess=true}}
+  </div>
+  <div class="well col-sm-4">
+    <h3>Remove</h3>
+    {{> quickForm
+    collection="Textbook"
+    template="bootstrap3-horizontal"
+    label-class="col-sm-2"
+    input-col-class="col-sm-10"
+
+    id="ManageTextbooksForm"
+    type="method"
+    meteormethod="deleteTextbook"
+    omitFields="ISBN10, ISBN13, Author, Cover"
+    resetOnSuccess=true}}
+  </div>
+  {{/if}}
+  {{/IfLoggedIn}}
+</template>

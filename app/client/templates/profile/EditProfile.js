@@ -1,5 +1,7 @@
-/**Code by Team LightSteelBlue **/
-
+/**
+ * Created by Michael on 12/15/2015.
+ * Code thanks to Team LightSteelBlue
+ */
 Template.EditProfile.events({
   'submit form': function(e) {
     e.preventDefault();
