@@ -1,7 +1,7 @@
 <template name="MatchOffer">
   {{#IfLoggedIn}}
     <div class="row">
-      {{#each myBuyOffers}}
+      {{#each myOffers}}
         {{#each matchBuyOffers}}
          <div class="col-sm-3 well">
            <img src="{{showCover}}" width="70%" height="70%"><br>
@@ -11,16 +11,14 @@
            <h4>Expiration:</h4> <strong>{{expiration}}</strong>
          </div>
         {{/each}}
-      {{/each}}
-      {{#each mySellOffers}}
         {{#each matchSellOffers}}
-          <div class="col-sm-3 well">
-            <img src="{{showCover}}" width="70%" height="70%"><br>
-            <h4>Name:</h4> <strong>{{name}}</strong><br>
-            <h4>Price:</h4> <strong>{{price}}</strong><br>
-            <h4>Condition:</h4> <strong>{{condition}}</strong><br>
-            <h4>Expiration:</h4> <strong>{{expiration}}</strong>
-          </div>
+         <div class="col-sm-3 well">
+           <img src="{{showCover}}" width="70%" height="70%"><br>
+           <h4>Name:</h4> <strong>{{name}}</strong><br>
+           <h4>Price:</h4> <strong>{{price}}</strong><br>
+           <h4>Condition:</h4> <strong>{{condition}}</strong><br>
+           <h4>Expiration:</h4> <strong>{{expiration}}</strong>
+         </div>
         {{/each}}
       {{/each}}
     </div>

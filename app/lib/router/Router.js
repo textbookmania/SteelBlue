@@ -6,7 +6,7 @@
 
 Router.configure({
   layoutTemplate: 'Layout',
-  waitOn: function() { return Meteor.subscribe("BuyOffer"); },
+  waitOn: function() { return Meteor.subscribe("Offer"); },
   loadingTemplate: 'Loading'
 });
 
@@ -18,19 +18,15 @@ Router.route('/list', {
   name: 'ListOffer'
 });
 
-Router.route('/addBuy', {
-  name: 'AddBuyOffer'
-});
-
-Router.route('/addSell', {
-  name: 'AddSellOffer'
+Router.route('/add', {
+  name: 'AddOffer'
 });
 
 Router.route('/matches', {
   name: 'MatchOffer'
 });
 
-Router.route('/buyOffer/:_id', {
+Router.route('/offer/:_id', {
   name: 'EditOffer',
-  data: function() { return BuyOffer.findOne(this.params._id); }
+  data: function() { return Offer.findOne(this.params._id); }
 });

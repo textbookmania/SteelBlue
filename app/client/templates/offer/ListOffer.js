@@ -1,14 +1,14 @@
 Template.ListOffer.helpers({
 
   /**
-   * @returns {*} All of the BuyOffer documents.
+   * @returns {*} All of the Offer documents.
    */
   buyOffers: function() {
-    return BuyOffer.find({owner: Meteor.user().profile.name});
+    return Offer.find({owner: Meteor.user().profile.name, offerType: "Buy"});
   },
 
   sellOffers: function() {
-    return SellOffer.find({owner: Meteor.user().profile.name});
+    return Offer.find({owner: Meteor.user().profile.name, offerType: "Sell"});
   },
 
   showCover: function() {
