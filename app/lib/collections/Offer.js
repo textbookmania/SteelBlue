@@ -9,6 +9,7 @@ Meteor.methods({
    */
   addOffer: function(doc) {
     doc.owner = Meteor.user().profile.name;
+    doc.taken = false;
     check(doc, Offer.simpleSchema());
     Offer.insert(doc);
   },
@@ -103,6 +104,14 @@ Offer.attachSchema(new SimpleSchema({
     }
   },
   owner: {
+    type: String,
+    optional: true
+  },
+  taken: {
+    type: Boolean,
+    optional: true
+  },
+  trader: {
     type: String,
     optional: true
   }

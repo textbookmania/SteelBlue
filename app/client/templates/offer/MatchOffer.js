@@ -73,3 +73,16 @@ Template.MatchOffer.helpers({
     return coverURL;
   }
 });
+
+Template.MatchOffer.event({
+  'click .contact': function(e) {
+    e.preventDefault();
+    var offerId = this._id;
+    var offerName = this.name;
+    var trader = this.owner;
+    var me = Meteor.user().profile.name;
+
+    Meteor.call("acceptOffer", offerId, me);
+    Meteor.call()
+  }
+});
