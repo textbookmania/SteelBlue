@@ -35,4 +35,8 @@ meteor deploy my_app_name.meteor.com
 ```
 
 ###Help
+You may refer to the [Wiki](https://github.com/textbookmania/SteelBlue/wiki) for more information. 
 
+#Credits  
+##Meteor
+Based off of [meteor-example-uh-cas template](http://ics-software-engineering.github.io/meteor-example-uh-cas/).  
