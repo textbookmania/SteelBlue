@@ -1,8 +1,57 @@
 body {
   padding-top: 70px;  /* Move body of page below navbar. */
+  color: steelblue;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 2em;
+}
+
+h2 {
+  margin: 0;
 }
 
 .well {
   text-align: center;
   font-size: 85%;
+  background-color: steelblue;
+  color: mintcream;
+}
+
+.well-sm {
+  background-color: mintcream;
+  color: steelblue;
+  text-align: center;
+  font-size: 85%;
+}
+
+.navbar-inverse {
+  background-color: steelblue;
+  color: mintcream;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+  color: mintcream;
+}
+
+.modal-content {
+  background-color: mintcream;
+  color: steelblue;
+  text-align: center;
+}
+
+button, .btn-primary {
+  background-color: mintcream;
+  color: steelblue;
+}
+
+button:hover {
+  border: 2px inset black;
+  border-radius: 5px 5px 5px;
+}
+
+a {
+  color: mintcream;
+}
+
+a:hover {
+  color: lightcoral;
 }

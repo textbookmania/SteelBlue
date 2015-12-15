@@ -7,8 +7,22 @@ Template.ListOffer.helpers({
     return Offer.find({owner: Meteor.user().profile.name, offerType: "Buy"});
   },
 
+  displayBuyOffers: function() {
+    if(this.taken) {
+      return true;
+    }
+    else return false;
+  },
+
   sellOffers: function() {
     return Offer.find({owner: Meteor.user().profile.name, offerType: "Sell"});
+  },
+
+  displaySellOffers: function() {
+    if(this.taken) {
+      return true;
+    }
+    else return false;
   },
 
   showCover: function() {

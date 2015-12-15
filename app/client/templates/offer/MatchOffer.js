@@ -11,7 +11,7 @@ Template.MatchOffer.helpers({
   },
 
   displayBuyOffers: function() {
-    if(this.owner != Meteor.user().profile.name && this.expiration > Date.now()) {
+    if(this.owner != Meteor.user().profile.name) {
       return true;
     }
     else return false;
@@ -22,7 +22,7 @@ Template.MatchOffer.helpers({
   },
 
   displaySellOffers: function() {
-    if(this.owner != Meteor.user().profile.name && this.expiration > Date.now()) {
+    if(this.owner != Meteor.user().profile.name) {
       return true;
     }
     else return false;
@@ -82,6 +82,21 @@ Template.MatchOffer.event({
     var trader = this.owner;
     var me = Meteor.user().profile.name;
 
+   sAlert.success("Offer accepted!");
+
     Meteor.call("acceptOffer", offerId, me);
+
+    twilio = Twilio("AC888cc9b5e60c6232f3d4f8604ea760b0", "1e1f2071ad4ebf8de436a181b3a0b014");
+    twilio.sendSms({
+      to:'+18086368370',
+      from:'+18086703568',
+      body: me + " has accepted your offer!"
+    }, function(err, responseData) {
+      if(!err) {
+        console.log(responseData.from);
+        console.log(responseData.body);
+      }
+    });
+    window.location.reload();
   }
 });

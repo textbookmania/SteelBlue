@@ -3,7 +3,7 @@
  * @type {*[]}
  */
 var offerSeeds = [
-  {name: "Introduction to Algorithms, 3rd Edition", price: 3, condition: "Fair", offerType: "Sell", owner: "dumlaoj", expiration: Date.now() + 7, taken: false, trader: ""},
+  {name: "Introduction to Algorithms, 3rd Edition", price: 3, condition: "Fair", offerType: "Sell", owner: "dumlaoj", expiration: Date.now() + 80, taken: false, trader: ""},
   {name: "Introduction to Algorithms, 3rd Edition", price: 5, condition: "Excellent", offerType: "Buy", owner: "mahoe7", expiration: Date.now() * 3, taken: false, trader: ""},
   {name: "Programming Language Pragmatics, Third Edition", price: 12, condition: "Good", offerType: "Sell", owner: "mahoe7", expiration: Date.now(), taken: false, trader: ""},
   {name: "Java Concepts: Compatible with Java 5, 6 and 7", price: 85, condition: "Poor", offerType: "Sell", owner: "dumlaoj", expiration: Date.now()/4, taken: false, trader: ""},

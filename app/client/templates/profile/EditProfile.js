@@ -1,6 +1,6 @@
 /**
  * Created by Michael on 12/15/2015.
- * Code by Team LightSteelBlue
+ * Code thanks to Team LightSteelBlue
  */
 Template.EditProfile.events({
   'submit form': function(e) {
@@ -12,5 +12,5 @@ Template.EditProfile.events({
     Meteor.users.update({_id:Meteor.userId()}, {$set: {"profile.contact": $(e.target).find('[id=contact]').checked}});
 
     Router.go('ProfilePage');
-  }
+  },
 });

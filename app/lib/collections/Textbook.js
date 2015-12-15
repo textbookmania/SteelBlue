@@ -1,27 +1,43 @@
 /**
  * Created by Michael on 12/14/2015.
+ * Meteor methods code in large thanks to Team MistyRose
  */
 textbook = "Textbook";
 
 Textbook = new Mongo.Collection(textbook);
+
+if(Meteor.isClient) {
+  Meteor.startup(function() {
+    sAlert.config({
+      effect: 'jelly',
+      position: 'bottom',
+      timeout: 5000,
+      html: false,
+      onRouteClose: true,
+      stack: true,
+      offset: 0,
+      beep: false
+    });
+  });
+};
 
 Meteor.methods({
 
   addTextbook: function(doc) {
     if (_.findWhere(Textbook.find().fetch(), {title: doc.title})  && _.findWhere(Textbook.find().fetch(), {ISBN13: doc.ISBN13}) ) {
       if (Meteor.isClient) {
-        /**sweetAlert("Title and ISBN already exists in the catalog!", "Please enter a different title and ISBN");*/
+        sAlert.error("Title and ISBN already exists in the catalog! Please enter a different title and ISBN", configOverwrite);
       }
       return;
     } else if (_.findWhere(Textbook.find().fetch(), {title: doc.title}) ) {
       if (Meteor.isClient) {
-        /**sweetAlert("Title already exists in the catalog!", "Please enter a different title.");*/
+        sAlert.error("Title already exists in the catalog! Please enter a different title.", configOverwrite);
       }
       return;
     }
     else if (_.findWhere(Textbook.find().fetch(), {ISBN13: doc.ISBN13})) {
       if (Meteor.isClient) {
-        /**sweetAlert("ISBN already exists in the catalog!", "Please enter a different ISBN.");*/
+        sAlert.error("ISBN already exists in the catalog! Please enter a different ISBN.", configOverwrite);
       }
       return;
     }
