@@ -2,12 +2,24 @@
   {{#IfLoggedIn}}
     <div class="row">
       {{#each myOffers}}
-      <div class="col-sm-3 well">
-        <h4>Name:</h4> {{name}}<br>
-        <h4>Price:</h4> {{price}}<br>
-        <h4>Condition:</h4> {{condition}}<br>
-        <h4>Expiration:</h4> {{expiration}}
-      </div>
+        {{#each matchBuyOffers}}
+         <div class="col-sm-3 well">
+           <img src="{{showCover}}" width="70%" height="70%"><br>
+           <h4>Name:</h4> <strong>{{name}}</strong><br>
+           <h4>Price:</h4> <strong>{{price}}</strong><br>
+           <h4>Condition:</h4> <strong>{{condition}}</strong><br>
+           <h4>Expiration:</h4> <strong>{{expiration}}</strong>
+         </div>
+        {{/each}}
+        {{#each matchSellOffers}}
+         <div class="col-sm-3 well">
+           <img src="{{showCover}}" width="70%" height="70%"><br>
+           <h4>Name:</h4> <strong>{{name}}</strong><br>
+           <h4>Price:</h4> <strong>{{price}}</strong><br>
+           <h4>Condition:</h4> <strong>{{condition}}</strong><br>
+           <h4>Expiration:</h4> <strong>{{expiration}}</strong>
+         </div>
+        {{/each}}
       {{/each}}
     </div>
   {{/IfLoggedIn}}

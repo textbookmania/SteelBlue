@@ -41,12 +41,25 @@ Offer.attachSchema(new SimpleSchema({
   name: {
     label: "Name",
     type: String,
-    allowedValues: [],
+    allowedValues: [
+      "Java Concepts: Compatible with Java 5, 6 and 7",
+      "Discrete Mathematics and Its Applications Seventh Edition",
+      "Data Structures: Abstraction and Design Using Java",
+      "C++ Primer Plus (6th Edition) (Developer's Library)",
+      "The C Programming Language",
+      "Introduction to Algorithms, 3rd Edition",
+      "Programming Language Pragmatics, Third Edition",
+      "Land of Lisp: Learn to Program in Lisp, One Game at a Time!",
+      "Database Systems: The Complete Book (2nd Edition)",
+      "Digital Logic Design: A Rigorous Approach",
+      "Operating System Concepts",
+      "Ethics for the Information Age (5th Edition)",
+      "Artificial Intelligence for Games. CRC Press. 2009."
+    ],
     optional: false,
-    max: 100,
     autoform: {
       group: offer,
-      placeholder: "Insert name here"
+      firstOption: "(Select a book)"
     }
   },
   price: {
@@ -65,23 +78,23 @@ Offer.attachSchema(new SimpleSchema({
     allowedValues: ['Excellent', 'Good', 'Fair', 'Poor', 'Any'],
     autoform: {
       group: offer,
-      placeholder: "Insert condition here"
+      firstOption: "(Select a condition)"
     }
   },
   offerType: {
     label: "Offer Type",
     type: String,
     optional: false,
-    max: 20,
+    allowedValues: ['Buy', 'Sell'],
     autoform: {
       group: offer,
-      placeholder: "Insert either buy or sell here"
+      firstOption: "(Buy or Sell?)"
     }
   },
   expiration: {
     label: "Expiration Date",
     type: Date,
-    optional: false,
+    optional: true,
     autoform: {
       group: offer,
       afFieldInput: {

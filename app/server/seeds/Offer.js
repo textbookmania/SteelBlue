@@ -3,11 +3,11 @@
  * @type {*[]}
  */
 var offerSeeds = [
-  {name: "Introduction to Algorithms", price: 3, condition: "fair", offerType: "Sell", expiration: "January 4th"},
-  {name: "Introduction to Algorithms", price: 5, condition: "excellent", offerType: "Buy", expiration: "January 4th"},
-  {name: "ICS101 Workbook", price: 12, condition: "good", offerType: "Sell", expiration: "January 4th"},
-  {name: "Introduction to ICS111", price: 85, condition: "bad", offerType: "Sell", expiration: "January 4th"},
-  {name: "Introduction to ICS212", price: 31, condition: "fair", offerType: "Buy", expiration: "January 4th"}
+  {name: "Introduction to Algorithms, 3rd Edition", price: 3, condition: "Fair", offerType: "Sell", owner: "dumlaoj", expiration: Date.now()},
+  {name: "Introduction to Algorithms, 3rd Edition", price: 5, condition: "Excellent", offerType: "Buy", owner: "mahoe7", expiration: Date.now()},
+  {name: "Programming Language Pragmatics, Third Edition", price: 12, condition: "Good", offerType: "Sell", owner: "mahoe7", expiration: Date.now()},
+  {name: "Java Concepts: Compatible with Java 5, 6 and 7", price: 85, condition: "Poor", offerType: "Sell", owner: "Moore", expiration: Date.now()},
+  {name: "C++ Primer Plus (6th Edition) (Developer's Library)", price: 31, condition: "Fair", offerType: "Buy", owner: "Kiyosaki", expiration: Date.now()}
 ];
 
 /**

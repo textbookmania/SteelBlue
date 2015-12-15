@@ -22,6 +22,9 @@ Router.route('/add', {
   name: 'AddOffer'
 });
 
+Router.route('/matches', {
+  name: 'MatchOffer'
+});
 
 Router.route('/offer/:_id', {
   name: 'EditOffer',

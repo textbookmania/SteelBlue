@@ -10,18 +10,18 @@ Meteor.methods({
   addTextbook: function(doc) {
     if (_.findWhere(Textbook.find().fetch(), {title: doc.title})  && _.findWhere(Textbook.find().fetch(), {ISBN13: doc.ISBN13}) ) {
       if (Meteor.isClient) {
-        sweetAlert("Title and ISBN already exists in the catalog!", "Please enter a different title and ISBN");
+        /**sweetAlert("Title and ISBN already exists in the catalog!", "Please enter a different title and ISBN");*/
       }
       return;
     } else if (_.findWhere(Textbook.find().fetch(), {title: doc.title}) ) {
       if (Meteor.isClient) {
-        sweetAlert("Title already exists in the catalog!", "Please enter a different title.");
+        /**sweetAlert("Title already exists in the catalog!", "Please enter a different title.");*/
       }
       return;
     }
     else if (_.findWhere(Textbook.find().fetch(), {ISBN13: doc.ISBN13})) {
       if (Meteor.isClient) {
-        sweetAlert("ISBN already exists in the catalog!", "Please enter a different ISBN.");
+        /**sweetAlert("ISBN already exists in the catalog!", "Please enter a different ISBN.");*/
       }
       return;
     }

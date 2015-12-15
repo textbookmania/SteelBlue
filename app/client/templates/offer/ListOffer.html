@@ -8,10 +8,12 @@
     </div>
     {{#each buyOffers}}
     <div class="col-sm-3 well">
-      <h4>Name:</h4> {{name}}<br>
-      <h4>Price:</h4> {{price}}<br>
-      <h4>Condition:</h4> {{condition}}<br>
-      <h4>Expiration:</h4> {{expiration}}
+      <img src="{{showCover}}" width="70%" height="70%"><br>
+      <h4>Name:</h4> <strong>{{name}}</strong><br>
+      <h4>Price:</h4> <strong>{{price}}</strong><br>
+      <h4>Condition:</h4> <strong>{{condition}}</strong><br>
+      <h4>Expiration:</h4> <strong>{{expiration}}</strong> <br>
+      <h4><a href="{{ pathFor 'EditOffer' }}">Edit Offer</a></h4>
     </div>
     {{/each}}
   </div>
@@ -23,10 +25,12 @@
     </div>
     {{#each sellOffers}}
     <div class="col-sm-3 well">
-      <h4>Name:</h4> {{name}}<br>
-      <h4>Price:</h4> {{price}}<br>
-      <h4>Condition:</h4> {{condition}}<br>
-      <h4>Expiration:</h4> {{expiration}}
+      <img src="{{showCover}}" width="70%" height="70%"><br>
+      <h4>Name:</h4> <strong>{{name}}</strong><br>
+      <h4>Price:</h4> <strong>{{price}}</strong><br>
+      <h4>Condition:</h4> <strong>{{condition}}</strong><br>
+      <h4>Expiration:</h4> <strong>{{expiration}}</strong> <br>
+      <h4><a href="{{ pathFor 'EditOffer' }}">Edit Offer</a></h4>
     </div>
     {{/each}}
   </div>
