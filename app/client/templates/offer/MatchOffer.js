@@ -11,7 +11,7 @@ Template.MatchOffer.helpers({
   },
 
   displayBuyOffers: function() {
-    if(this.owner != Meteor.user().profile.name) {
+    if(this.owner != Meteor.user().profile.name && this.expiration < Date.now()) {
       return true;
     }
     else return false;
@@ -22,7 +22,7 @@ Template.MatchOffer.helpers({
   },
 
   displaySellOffers: function() {
-    if(this.owner != Meteor.user().profile.name) {
+    if(this.owner != Meteor.user().profile.name && this.expiration < Date.now()) {
       return true;
     }
     else return false;
