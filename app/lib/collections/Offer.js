@@ -9,7 +9,6 @@ Meteor.methods({
    */
   addOffer: function(doc) {
     doc.owner = Meteor.user().profile.name;
-    doc.accepted = false;
     check(doc, Offer.simpleSchema());
     Offer.insert(doc);
   },
@@ -22,15 +21,6 @@ Meteor.methods({
   editOffer: function(doc, docID) {
     check(doc, Offer.simpleSchema());
     Offer.update({_id: docID}, doc);
-  },
-
-  deleteOffer: function(docID) {
-    Offer.remove(docID);
-  },
-
-  acceptOffer: function(docID, other) {
-    Offer.update({_id: docID}, {$set: {accepted: true}});
-    Offer.update({_id: docID}, {$set: {tradeWith: other}});
   }
 });
 
@@ -113,14 +103,6 @@ Offer.attachSchema(new SimpleSchema({
     }
   },
   owner: {
-    type: String,
-    optional: true
-  },
-  accepted: {
-    type: Boolean,
-    optional: true
-  },
-  tradeWith: {
     type: String,
     optional: true
   }

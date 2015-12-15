@@ -11,7 +11,7 @@ Template.MatchOffer.helpers({
   },
 
   displayBuyOffers: function() {
-    if(this.owner != Meteor.user().profile.name && this.expiration <= Date.now()) {
+    if(this.owner != Meteor.user().profile.name) {
       return true;
     }
     else return false;
@@ -71,17 +71,5 @@ Template.MatchOffer.helpers({
       default: coverURL = "http://images.amazon.com/images/P0123747317.01.LZ.jpg";
     }
     return coverURL;
-  }
-});
-
-Template.MatchOffer.events({
-  'click .acceptOffer': function(e) {
-    e.preventDefault();
-    var offerId = this._id;
-    var offerName = this.name;
-    var trader = this.owner;
-    var me = Meteor.user().profile.name;
-
-    Meteor.call("acceptOffer", offerId, me);
   }
 });
