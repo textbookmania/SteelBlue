@@ -11,6 +11,10 @@ Template.postSubmit.events({
       desc: $(e.target).find('[name=desc]').val()
     };
 
+    if(post.price === ""){
+      return alert("Please submit a price");
+    };
+
     Meteor.call('postInsert', post, function(error, result) {
       // display the error to the user and abort
       if (error)
@@ -28,5 +32,14 @@ Template.postSubmit.events({
 Template.postSubmit.helpers({
   selectedTextbook: function() {
     return Textbooks.findOne({_id: Session.get('selectedItem')});
+  },
+
+  conditions: function(){
+    return ['Excellent', 'Good', 'Fair', 'Poor']
+  },
+
+  offers: function(){
+    return ['Buy', 'Sell']
   }
+
 });
