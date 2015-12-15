@@ -31,7 +31,7 @@ Meteor.methods({
   acceptOffer: function(docID, other) {
     Offer.update({_id: docID}, {$set: {taken: true}});
     Offer.update({_id: docID}, {$set: {trader: other}});
-
+  }
 });
 
 // Publish the entire Collection.  Subscription performed in the router.
