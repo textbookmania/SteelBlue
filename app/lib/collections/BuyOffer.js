@@ -1,43 +1,44 @@
-offer = "Offer";  // avoid typos, this string occurs many times.
+buyOffer = "BuyOffer";  // avoid typos, this string occurs many times.
 
-Offer = new Mongo.Collection(offer);
+BuyOffer = new Mongo.Collection(buyOffer);
 
 Meteor.methods({
   /**
-   * Invoked by AutoForm to add a new Offer record.
-   * @param doc The Offer document.
+   * Invoked by AutoForm to add a new BuyOffer record.
+   * @param doc The BuyOffer document.
    */
   addOffer: function(doc) {
     doc.owner = Meteor.user().profile.name;
-    check(doc, Offer.simpleSchema());
-    Offer.insert(doc);
+    doc.offerType = "Buy";
+    check(doc, BuyOffer.simpleSchema());
+    BuyOffer.insert(doc);
   },
   /**
    *
-   * Invoked by AutoForm to update a Offer record.
-   * @param doc The Offer document.
+   * Invoked by AutoForm to update a BuyOffer record.
+   * @param doc The BuyOffer document.
    * @param docID It's ID.
    */
   editOffer: function(doc, docID) {
-    check(doc, Offer.simpleSchema());
-    Offer.update({_id: docID}, doc);
+    check(doc, BuyOffer.simpleSchema());
+    BuyOffer.update({_id: docID}, doc);
   }
 });
 
 // Publish the entire Collection.  Subscription performed in the router.
 if (Meteor.isServer) {
-  Meteor.publish(offer, function () {
-    return Offer.find();
+  Meteor.publish(buyOffer, function () {
+    return BuyOffer.find();
   });
 }
 
 
 /**
- * Create the schema for Offer
+ * Create the schema for BuyOffer
  * See: https://github.com/aldeed/meteor-autoform#common-questions
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */
-Offer.attachSchema(new SimpleSchema({
+BuyOffer.attachSchema(new SimpleSchema({
   name: {
     label: "Name",
     type: String,
@@ -58,7 +59,7 @@ Offer.attachSchema(new SimpleSchema({
     ],
     optional: false,
     autoform: {
-      group: offer,
+      group: buyOffer,
       firstOption: "(Select a book)"
     }
   },
@@ -67,7 +68,7 @@ Offer.attachSchema(new SimpleSchema({
     type: Number,
     optional: false,
     autoform: {
-      group: offer,
+      group: buyOffer,
       placeholder: "Insert price here"
     }
   },
@@ -77,26 +78,20 @@ Offer.attachSchema(new SimpleSchema({
     optional: false,
     allowedValues: ['Excellent', 'Good', 'Fair', 'Poor', 'Any'],
     autoform: {
-      group: offer,
+      group: buyOffer,
       firstOption: "(Select a condition)"
     }
   },
   offerType: {
-    label: "Offer Type",
     type: String,
-    optional: false,
-    allowedValues: ['Buy', 'Sell'],
-    autoform: {
-      group: offer,
-      firstOption: "(Buy or Sell?)"
-    }
+    optional: true
   },
   expiration: {
     label: "Expiration Date",
     type: Date,
     optional: true,
     autoform: {
-      group: offer,
+      group: buyOffer,
       afFieldInput: {
         type: "bootstrap-datetimepicker"
       }

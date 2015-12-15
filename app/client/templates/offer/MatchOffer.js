@@ -2,16 +2,20 @@
  * Created by Michael on 12/14/2015.
  */
 Template.MatchOffer.helpers({
-  myOffers: function() {
-    return Offers.find({owner: Meteor.user().profile.name});
+  myBuyOffers: function() {
+    return BuyOffer.find({owner: Meteor.user().profile.name});
   },
 
   matchBuyOffers: function() {
-    return Offers.find({name: this.name, offerType: "Sell"});
+    return SellOffer.find({name: this.name});
+  },
+
+  mySellOffers: function() {
+    return SellOffer.find({owner: Meteor.user().profile.name});
   },
 
   matchSellOffers: function() {
-    return Offers.find({name: this.name, offerType: "Buy"});
+    return BuyOffer.find({name: this.name});
   },
 
   showCover: function() {
