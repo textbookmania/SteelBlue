@@ -1,13 +1,15 @@
 <template name="CasLogin">
   {{#if currentUser}}
-    <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ currentUser.profile.name }}<b class="caret"></b></a>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="#" class="btn cas-logout">Logout</a></li>
-      </ul>
-    </li>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ currentUser.username }}<b class="caret"></b></a>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="{{ pathFor 'ProfilePage' data=currentUser }}">Profile</a></li>
+      {{#if isInRole 'admin'}}<li><a href="{{ pathFor 'AdminPage' }}">Admin Page</a></li>{{/if}}
+      <li><a href="#" class="btn cas-logout">Logout</a></li>
+    </ul>
+  </li>
 
   {{else}}
-    <li><a href="#" class="navbar-link cas-login">Login</a></li>
+  <li><a href="#" class="navbar-link cas-login">Login</a></li>
   {{/if}}
 </template>

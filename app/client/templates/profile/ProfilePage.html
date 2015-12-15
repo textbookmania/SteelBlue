@@ -1,0 +1,57 @@
+<template name="ProfilePage">
+  <div class="container-fluid" id="profile-page-content">
+    <h3>Profile:</h3>
+    <div class="row">
+      <div class="well container-fluid">
+        <div class="col-sm-2" id="profile-left">
+          {{#if hasProfileImage}}
+          <img src="{{ profile.profileImage }}" class="img-rounded center-block" height="100" width="100">
+          {{else}}
+          <p>There is no profile image here!</p>
+          {{/if}}
+          <div id="profile-username">
+            {{username}}
+          </div>
+        </div>
+        <div class="col-sm-6" id="profile-right">
+          <h3>{{ profile.firstName }} {{ profile.lastName }}</h3>
+          {{#if profile.shareEmail }}
+          <h3>Email: {{ emails.[0].address }}</h3>
+          {{/if}}
+          {{#if userIsBanned}}<h2 style="color: red">This user has been banned.</h2>{{/if}}
+        </div>
+      </div>
+      {{#if ownProfile}}
+      <button class="btn btn-primary" id="profile-edit-button" type="button" data-toggle="collapse" data-target="#profile-edit" aria-expanded="false" aria-controls="profile-edit">
+        Edit
+      </button>
+      <div class="collapse" id="profile-edit">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            {{#IfLoggedIn}}
+            <div class="EditProfileContainer">
+              {{#autoForm
+              collection=users
+              template="bootstrap3-horizontal"
+              label-class="col-sm-2"
+              input-col-class="col-sm-10"
+              id="EditProfileForm"
+              type="update"
+              doc=currentUser}}
+              {{#each afFieldNames name="profile"}}
+              {{> afQuickField name=this.name options=afOptionsFromSchema}}
+              {{/each}}
+              <div>
+                <button type="submit" data-toggle="collapse" data-target="#profile-edit" class="btn btn-primary">Submit</button>
+              </div>
+              {{/autoForm}}
+            </div>
+            {{/IfLoggedIn}}
+          </div>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+    {{> UserOffers}}
+  </div>
+</template>
