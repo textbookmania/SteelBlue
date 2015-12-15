@@ -22,7 +22,16 @@ Meteor.methods({
   editOffer: function(doc, docID) {
     check(doc, Offer.simpleSchema());
     Offer.update({_id: docID}, doc);
-  }
+  },
+
+  deleteOffer: function(docID) {
+    Offer.remove(docID);
+  },
+
+  acceptOffer: function(docID, other) {
+    Offer.update({_id: docID}, {$set: {taken: true}});
+    Offer.update({_id: docID}, {$set: {trader: other}});
+
 });
 
 // Publish the entire Collection.  Subscription performed in the router.
