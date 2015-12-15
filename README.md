@@ -1,37 +1,42 @@
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-example-uh-cas/master/doc/meteor-example-uh-cas.png)
+## Textbook Mania version SteelBlue
 
-## Installation
+Textbook Mania is a simple webapp where students can create offers that match with other users. This eliminates the "middle man" when looking for textbooks
 
-Download the system, cd in the app directory, then execute:
+###Features
+With the Textbook Mania app, you can make buy/sell offers, match them with other users, create a simple profile page for other users to see. Also admin users have the ability to create new textbooks
+
+##Make Offers
+The student may make an offer by going to "add offer" tab. The user will then select the desired fields and submit the offer. 
+
+##Offer Matches
+The user's offers will show up on the main page. The user will also see the different offers that have matched in price with the desired book. It will contain information about the user that created the respective offer as well as information on the book being offered. Offers will expire after a certain amount of time.
+
+##Profile Page
+User will have a simple Profile Page where other users can view. This includes a first and last name, email address, and how that user would like to be contacted. Users can also add profile picture
+
+##Admin Privelages
+Some users will have admin privelages. This allows them to create edit and remove textbooks from the database 
+
+###Installation and Usage
+
+Download the system. Inside the config directory, open up
+```
+settings.development.json
+```
+and add in your UH Username to the allowed users field. Then, cd in the app directory, then execute:
 
 ```
 meteor --settings ../config/settings.development.json
 ```
 
-The settings file is needed to provide CAS parameter information. Note that you won't be able to successfully login until you edit the [settings.development.json](https://github.com/ics-software-engineering/meteor-example-uh-cas/blob/master/config/settings.development.json) file to indicate that your UH account should be one of those allowed to login.
+To deploy it use: 
+```
+meteor deploy my_app_name.meteor.com
+```
 
-## Walkthrough
+###Help
+You may refer to the [Wiki](https://github.com/textbookmania/SteelBlue/wiki) for more information. 
 
-Meteor-example-uh-cas is a fork of [meteor-application-template](http://ics-software-engineering.github.io/meteor-application-template/) that illustrates how to perform [University of Hawaii CAS authentication](https://www.hawaii.edu/bwiki/display/UHIAM/UH+Web+Login+Service+-+CAS+v3).
-
-This application builds upon meteor-application-template to implement CAS authentication as follows:
-
-First, it uses [atoy40:meteor-accounts-cas](https://github.com/atoy40/meteor-accounts-cas). (I also had to manually add the "random" package from the meteor core.)
-
-Second, it defines a template called CasLogin in [CasLogin.html](https://github.com/ics-software-engineering/meteor-example-uh-cas/blob/master/app/client/templates/application/CasLogin.html) and [CasLogin.js](https://github.com/ics-software-engineering/meteor-example-uh-cas/blob/master/app/client/templates/application/CasLogin.js).  The CasLogin template is invoked in the [Header.html](https://github.com/ics-software-engineering/meteor-example-uh-cas/blob/master/app/client/templates/application/Header.html) to put the link in the navbar to login (and after successful login, to display the user name and a logout button).
-
-Third, the [settings.development.json](https://github.com/ics-software-engineering/meteor-example-uh-cas/blob/master/config/settings.development.json) file provides the configuration parameters to the meteor-accounts-cas package. Note that only two users are allowed to sign in; you will want to edit this setting before adapting this code to your own application. 
-
-Checking to see that only the users specified in the settings.development.json file are allowed is implemented in [Accounts.js](https://github.com/ics-software-engineering/meteor-example-uh-cas/blob/master/app/server/seeds/Accounts.js). This file defines a function for validating new users that checks the user-supplied account name against the list of authorized account names in the settings file.
-
-## Screencast
-
-Click the image below to watch a 10 minute walkthrough of this system.
-
-[<img src="https://raw.githubusercontent.com/ics-software-engineering/meteor-example-uh-cas/master/doc/meteor-example-uh-cas-youtube.png" width="600">](https://www.youtube.com/watch?v=HA_NAdsr-yw)
-
-## Credits
-
-Thanks to [Yongwen Xu](https://github.com/yongwen) for the sample code! 
-
-
+#Credits  
+##Meteor
+Based off of [meteor-example-uh-cas template](http://ics-software-engineering.github.io/meteor-example-uh-cas/).  
