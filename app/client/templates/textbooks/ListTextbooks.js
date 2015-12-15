@@ -3,6 +3,6 @@
  */
 Template.ListTextbooks.helpers({
   textbookList: function() {
-    return Textbook.find({});
+    return Textbook.find();
   }
 });
