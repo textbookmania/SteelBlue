@@ -31,6 +31,25 @@ Meteor.methods({
   acceptOffer: function(docID, other) {
     Offer.update({_id: docID}, {$set: {taken: true}});
     Offer.update({_id: docID}, {$set: {trader: other}});
+    if(Meteor.isClient) {
+      sAlert.success("Offer accepted!");
+    }
+  },
+
+  sendSMS: function() {
+    if(Meteor.isServer) {
+      twilio = Twilio("AC888cc9b5e60c6232f3d4f8604ea760b0", "1e1f2071ad4ebf8de436a181b3a0b014");
+      twilio.sendSms({
+        to:'+18086368370',
+        from:'+18086703568',
+        body: Meteor.user().profile.name + " has accepted your offer!"
+      }, function(err, responseData) {
+        if(!err) {
+          console.log(responseData.from);
+          console.log(responseData.body);
+        }
+      });
+    }
   }
 });
 

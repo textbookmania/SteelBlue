@@ -42,6 +42,10 @@ Router.route('/manage', {
   name: 'ManageTextbooks'
 });
 
+Router.route('/textbooks', {
+  name: 'ListTextbooks'
+});
+
 Router.route('/offer/:_id', {
   name: 'EditOffer',
   data: function() { return Offer.findOne(this.params._id); }

@@ -18,6 +18,7 @@
           <li> <a data-toggle="modal" data-target="#ugModal">User Guide</a></li>
           {{#if isInRole 'admin'}}
             <li><a href="{{ pathFor 'ManageTextbooks' }}">Manage Textbooks</a></li>
+            <li><a href="{{ pathFor 'ListTextbooks' }}">Textbook List</a></li>
           {{/if}}
           {{#if currentUser}}
             <li><a href="{{ pathFor 'AddOffer' }}">Add Offer</a></li>

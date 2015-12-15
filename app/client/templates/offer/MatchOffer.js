@@ -80,21 +80,9 @@ Template.MatchOffer.events({
     var offerId = this._id;
     var me = Meteor.user().profile.name;
 
-   sAlert.success("Offer accepted!");
-
     Meteor.call("acceptOffer", offerId, me);
+    Meteor.call("sendSMS");
 
-    var twilio = new Twilio("AC888cc9b5e60c6232f3d4f8604ea760b0", "1e1f2071ad4ebf8de436a181b3a0b014");
-    twilio.sendSms({
-      to:'+18086368370',
-      from:'+18086703568',
-      body: me + " has accepted your offer!"
-    }, function(err, responseData) {
-      if(!err) {
-        console.log(responseData.from);
-        console.log(responseData.body);
-      }
-    });
     window.location.reload();
   }
 });
