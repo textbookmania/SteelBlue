@@ -74,19 +74,17 @@ Template.MatchOffer.helpers({
   }
 });
 
-Template.MatchOffer.event({
+Template.MatchOffer.events({
   'click .contact': function(e) {
     e.preventDefault();
     var offerId = this._id;
-    var offerName = this.name;
-    var trader = this.owner;
     var me = Meteor.user().profile.name;
 
    sAlert.success("Offer accepted!");
 
     Meteor.call("acceptOffer", offerId, me);
 
-    twilio = Twilio("AC888cc9b5e60c6232f3d4f8604ea760b0", "1e1f2071ad4ebf8de436a181b3a0b014");
+    var twilio = new Twilio("AC888cc9b5e60c6232f3d4f8604ea760b0", "1e1f2071ad4ebf8de436a181b3a0b014");
     twilio.sendSms({
       to:'+18086368370',
       from:'+18086703568',

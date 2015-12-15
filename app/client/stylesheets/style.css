@@ -23,6 +23,10 @@ h2 {
   font-size: 85%;
 }
 
+hr {
+  border-width: 3px 0px 0px;
+}
+
 .navbar-inverse {
   background-color: steelblue;
   color: mintcream;
