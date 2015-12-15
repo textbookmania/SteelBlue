@@ -28,7 +28,12 @@ ejson
 check
 atoy40:accounts-cas
 random
+<<<<<<< HEAD
 alanning:roles
 accolver:twilio-meteor
 juliancwirko:s-alert
 juliancwirko:s-alert-jelly
+=======
+aldeed:simple-schema
+lookback:dropdowns
+>>>>>>> origin/master

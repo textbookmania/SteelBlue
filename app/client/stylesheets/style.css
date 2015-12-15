@@ -55,7 +55,35 @@ button:hover {
 a {
   color: mintcream;
 }
+<<<<<<< HEAD
 
 a:hover {
   color: lightcoral;
+=======
+.alert {
+  animation: fadeOut 2700ms ease-in 0s 1 forwards;
+  -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
+  -moz-animation: fadeOut 2700ms ease-in 0s 1 forwards;
+  width: 250px;
+  float: right;
+  clear: both;
+  margin-bottom: 5px;
+  pointer-events: auto;
+}
+
+.post-image {
+  float: left
+}
+
+.post-image img {
+  display: block
+}
+
+.post-text {
+  margin-left: 210px
+}
+
+.button-right{
+  float: right
+>>>>>>> origin/master
 }
