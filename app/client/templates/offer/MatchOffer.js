@@ -3,15 +3,29 @@
  */
 Template.MatchOffer.helpers({
   myOffers: function() {
-    return Offers.find({owner: Meteor.user().profile.name});
+    return Offer.find({owner: Meteor.user().profile.name});
   },
 
   matchBuyOffers: function() {
-    return Offers.find({name: this.name, offerType: "Sell"});
+    return Offer.find({name: this.name, offerType: "Sell"});
+  },
+
+  displayBuyOffers: function() {
+    if(this.owner != Meteor.user().profile.name) {
+      return true;
+    }
+    else return false;
   },
 
   matchSellOffers: function() {
-    return Offers.find({name: this.name, offerType: "Buy"});
+    return Offer.find({name: this.name, offerType: "Buy"});
+  },
+
+  displaySellOffers: function() {
+    if(this.owner != Meteor.user().profile.name) {
+      return true;
+    }
+    else return false;
   },
 
   showCover: function() {
