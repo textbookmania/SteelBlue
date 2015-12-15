@@ -2,7 +2,7 @@
  * Created by Michael on 12/15/2015.
  */
 Template.ListTextbooks.helpers({
-  textbookList: function() {
+  textbook: function() {
     return Textbook.find();
   }
 });
