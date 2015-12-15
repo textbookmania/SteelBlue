@@ -26,6 +26,18 @@ Router.route('/matches', {
   name: 'MatchOffer'
 });
 
+Router.route('/profile', {
+  name: 'ProfilePage'
+});
+
+Router.route('/profile/edit', {
+  name: 'EditProfile'
+});
+
+Router.route('/userGuide', {
+  name: 'UserGuide'
+});
+
 Router.route('/offer/:_id', {
   name: 'EditOffer',
   data: function() { return Offer.findOne(this.params._id); }

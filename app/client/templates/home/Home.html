@@ -1,9 +1,9 @@
 <template name="Home">
 
   {{#if currentUser}}
-    Welcome back, {{ currentUser.profile.firstName }}! Here is a list of your current offers:<br>
+    Welcome back, {{ currentUser.profile.name }}! Here is a list of your current matches:<br>
 
-  {{> ListOffer}}
+  {{> MatchOffer}}
   {{else}}
     <p>Welcome to Steel Blue's Textbook Exchange! Please log-in to use our services. Do note that you need to have a valid UH Username in order to log-in!</p>
   {{/if}}

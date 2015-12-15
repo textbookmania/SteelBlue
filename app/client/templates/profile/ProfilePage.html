@@ -1,0 +1,22 @@
+<template name="ProfilePage">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 col-sm-offset-2">
+        <img src="{{image}}" class="img-rounded center-block" height="100" width="100"><br>
+      </div>
+      <div class="col-sm-7 well">
+        <h2 class="fullName well-sm">
+          {{currentUser.profile.firstName}} {{currentUser.profile.lastName}}
+        </h2>
+        {{#if contactMe}}
+        <h2>Email: {{ currentUser.profile.email }}</h2>
+        {{else}}
+        <h3>This user does not wish to be contacted.</h3>
+        {{/if}}
+        <div id="contact">
+          <h2>{{contactMe(currentUser.profile)}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
